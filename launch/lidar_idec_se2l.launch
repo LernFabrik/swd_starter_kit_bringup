@@ -6,7 +6,7 @@
   <arg name="prefix"    default="laser_1" />
 
   <!-- IDEC -->
-  <node pkg="urg_node" name="urg_node" type="urg_node">
+  <node pkg="urg_node" name="urg_node" type="urg_node" respawn="true">
     <param name="ip_address" value="$(arg sensor_ip)" />
     <param name="frame_id" value="$(arg prefix)" />
 

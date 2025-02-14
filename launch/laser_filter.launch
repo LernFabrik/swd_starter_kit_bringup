@@ -3,8 +3,7 @@
 <launch>
   <arg name="scan_prefix"/>
 
-  <node pkg="laser_filters" type="scan_to_scan_filter_chain"
-      name="laser_filter">
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter" respawn="true">
     <rosparam command="load" file="$(find swd_starter_kit_bringup)/assets/lidar_filtering_config.yaml" />
 
     <remap from="scan_filtered" to="$(arg scan_prefix)/scan" />
